@@ -10,7 +10,7 @@ class Hamiltonian:
         self.V = Potential
 
     def __call__(self, lattice):
-        return self.K(lattice) + np.diag(self.V(lattice.x))
+        return self.K(lattice) + np.diag(self.V(lattice))
 
     def spectrum(self, lattice):
         return np.linalg.eigh(self(lattice))

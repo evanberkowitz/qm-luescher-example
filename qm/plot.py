@@ -22,7 +22,7 @@ def spectrum(ax, lattice, eigenvalues, eigenvectors, modes=None, potential=None)
         ax.hlines(energy,min(lattice.x),max(lattice.x), color=wavefunction.get_color(), linestyle = ":", label=f"E={energy}")
 
     if potential is not None:
-        V = potential(lattice.x)
+        V = potential(lattice)
         minimum = min(-maximum, np.min(V))
         lattice.plot(ax, V, 
                 color='black',
